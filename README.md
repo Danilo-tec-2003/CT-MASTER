@@ -1,4 +1,4 @@
-##Projeto de Centro de Treinamentos de Artes Marciais - Full Stack (projeto Decola Tech)
+## Projeto de Centro de Treinamentos de Artes Marciais - Full Stack (projeto Decola Tech)
 Este projeto visa simular e gerenciar as operações de um Centro de Treinamentos (CT) de artes marciais. A aplicação abrange diversas funcionalidades essenciais, como o cadastro de alunos (students), agendamento de TrialClass (aulas experimentais), gestão de instrutores (instructors), organização de turmas para atletas competidores, agendamento de eventos e a administração de planos de mensalidade.
 
 Tecnologias Utilizadas
