@@ -71,7 +71,6 @@ Controle completo dos planos de assinatura para **students**, incluindo:
 - **Spring Boot Starter Web**: Para criar e expor APIs RESTful.
 - **Spring Boot Starter Data JPA**: Para a integração do Spring com o banco de dados relacional utilizando JPA.
 - **Spring Boot Starter Security**: Para implementar autenticação e controle de acesso seguro.
-- **Spring Boot Starter Test**: Ferramentas para realizar testes unitários e de integração.
 - **Swagger**: Para gerar documentação interativa da API.
 
 ## Configuração do Projeto
@@ -92,18 +91,17 @@ spring.datasource.password=sua_senha
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
+````
 
-2. Configuração do Swagger
-O Swagger foi integrado ao projeto para gerar a documentação interativa da API. Para acessá-la, basta rodar a aplicação e navegar até o seguinte endereço:
+###2. Configuração do Swagger
+-O Swagger foi integrado ao projeto para gerar a documentação interativa da API. Para acessá-la, basta rodar a aplicação e navegar até o seguinte endereço:
+-http://localhost:8080/swagger-ui.html
+-Isso permitirá visualizar todas as rotas da API, com exemplos de requisições e respostas.
 
+###3. Inicialização do Projeto
+-Certifique-se de que o PostgreSQL ou H2 Database esteja funcionando corretamente.
 
-http://localhost:8080/swagger-ui.html
-Isso permitirá visualizar todas as rotas da API, com exemplos de requisições e respostas.
-
-3. Inicialização do Projeto
-Certifique-se de que o PostgreSQL ou H2 Database esteja funcionando corretamente.
-
-Compile e execute o projeto com o comando:
-mvn spring-boot:run
-O servidor estará disponível em http://localhost:8080.
+###Compile e execute o projeto com o comando:
+-mvn spring-boot:run
+-O servidor estará disponível em http://localhost:8080.
  
