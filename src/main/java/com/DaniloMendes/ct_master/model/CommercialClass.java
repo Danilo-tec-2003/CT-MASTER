@@ -9,16 +9,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class CompetitionGroup {
+public class CommercialClass {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String modality;  // Ex: Jiu-Jitsu, MMA, Muay Thai
-    private String schedule;  // Ex: Seg, Qua, Sex 19h às 21h
-
-    @ManyToOne
-    @JoinColumn(name = "instructor_id")
-    private Instructor instructor;
+    private String className;
+    private String instructor;
+    private String schedule; // Ex: "Segunda e Quarta, 19h"
+    private int maxStudents;
+    private String difficultyLevel; // Iniciante, Intermediário
 }
-

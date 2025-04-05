@@ -1,8 +1,8 @@
 package com.DaniloMendes.ct_master.repository;
 
-import com.DaniloMendes.ct_master.model.CompetitionClass;
+import com.DaniloMendes.ct_master.model.CommercialClass;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CompetitionClassRepository extends JpaRepository<CompetitionClass, Long> {
+public interface CommercialClassRepository extends JpaRepository<CommercialClass, Long> {
     // Métodos básicos do JPA já inclusos
 }
