@@ -1,107 +1,94 @@
-# Projeto de Centro de Treinamentos de Artes Marciais - Full Stack (projeto Decola Tech)
+🥋 CT-MASTER: API para Gestão de Centros de Treinamento
+📄 Sobre o Projeto
+O CT-MASTER é uma API RESTful robusta, desenvolvida para gerenciar de forma completa e eficiente as operações de um Centro de Treinamento (CT) de artes marciais. A aplicação foi projetada para centralizar e automatizar processos, oferecendo uma base sólida para um sistema de gestão escalável.
 
-Este projeto visa simular e gerenciar as operações de um **Centro de Treinamentos (CT)** de artes marciais. A aplicação abrange diversas funcionalidades essenciais, como o cadastro de **alunos (students)**, agendamento de **TrialClass** (aulas experimentais), gestão de **instrutores (instructors)**, organização de turmas para **atletas competidores**, agendamento de **eventos** e a administração de **planos de mensalidade**.
+✨ Funcionalidades Principais
+[✅] Gestão de Alunos (Students): CRUD completo para alunos, incluindo informações de contato, nível de experiência e ficha básica de saúde.
 
-## Tecnologias Utilizadas
+[✅] Agendamento de Aulas Experimentais (TrialClass): Permite que novos alunos agendem até 3 aulas experimentais para conhecer as modalidades.
 
-### Backend
-- **Spring Boot**: Framework para desenvolvimento de aplicações Java baseadas em microserviços.
-- **Spring Data JPA**: Facilita a integração com bancos de dados relacionais utilizando JPA.
-- **Spring Security**: Implementa segurança e autenticação da aplicação.
-- **PostgreSQL**: Banco de dados relacional utilizado para persistência de dados.
-- **Swagger**: Ferramenta para gerar documentação interativa da API RESTful.
+[✅] Gerenciamento de Instrutores (Instructors): Cadastro de professores com suas especialidades e horários de disponibilidade.
 
-### Frontend
-- **Angular**: Framework frontend para a criação da interface de usuário (a ser desenvolvido).
-- **API RESTful**: O backend oferece uma API RESTful para comunicação com o frontend.
+[✅] Turmas de Competição (CompetitionClass): Criação e gestão de turmas especiais para atletas competidores, com treinamentos intensivos.
 
-### Banco de Dados
-- **PostgreSQL**: Utilizado como banco de dados principal para armazenar as informações.
-- **H2 Database**: Banco de dados em memória utilizado para desenvolvimento local.
+[✅] Gestão de Planos e Mensalidades: Administração de planos (mensal, trimestral, anual) e controle do histórico de pagamentos dos alunos.
 
-## Funcionalidades
+[✅] Segurança: Autenticação e autorização de endpoints implementadas com Spring Security.
 
-### 1. Cadastro de Students
-Permite o cadastro de novos **students** no sistema com as seguintes informações:
-- Nome completo
-- Idade
-- Nível de experiência (iniciante, intermediário, avançado)
-- Arte marcial praticada
-- Contato (telefone e e-mail)
-- Ficha básica de saúde (informações sobre condições médicas, se houver)
-- Modalidade desejada (por exemplo, Jiu-Jitsu, Muay Thai, Karatê)
+🛠️ Tecnologias Utilizadas
+Categoria	Tecnologias
+Back-end	Java 17+, Spring Boot 3.x, Spring Security, Maven
+Persistência	Spring Data JPA, Hibernate
+Banco de Dados	PostgreSQL (Produção), H2 Database (Testes/Dev)
+Documentação	SpringDoc (Swagger UI)
 
-### 2. Agendamento de TrialClass (Aulas Experimentais)
-O sistema permite que novos **students** agendem até **3 TrialClass** para conhecerem as modalidades disponíveis no CT. A funcionalidade permite a visualização da agenda de aulas e a escolha das preferências de horários.
 
-### 3. Gerenciamento de Instructors (Professores)
-Gerencia o cadastro de **instructors** de artes marciais, incluindo:
-- Nome completo
-- Especialidade (por exemplo, Jiu-Jitsu, Muay Thai)
-- Disponibilidade para aulas (dias e horários)
+🔌 Endpoints da API (Exemplos)
+A API segue os princípios REST. Abaixo estão alguns dos principais endpoints:
 
-### 4. CompetitionClass (Turma para Atletas Competidores)
-Cadastro de turmas específicas para **students** focados em competições, com detalhes como:
-- Nível de experiência necessário
-- Modalidade específica
-- Treinamentos intensivos para competidores
+Verbo HTTP	Endpoint	Descrição
+POST	/students	Cadastra um novo aluno no sistema.
+GET	/students/{id}	Busca um aluno específico pelo seu ID.
+GET	/instructors	Lista todos os instrutores disponíveis.
+POST	/trial-classes	Agenda uma nova aula experimental para um aluno.
+GET	/competition-classes	Lista as turmas de competição.
 
-### 5. Gestão de Planos e Mensalidades
-Controle completo dos planos de assinatura para **students**, incluindo:
-- Cadastro de planos de mensalidade (mensal, trimestral, anual)
-- Status de pagamento (pago, pendente)
-- Histórico de pagamentos
+Para a lista completa e interativa de endpoints, acesse a documentação do Swagger.
 
-## Estrutura do Projeto
+🚀 Como Executar o Projeto
+Siga os passos abaixo para configurar e executar a aplicação em seu ambiente local.
 
-### Backend
+✅ Pré-requisitos
+Java JDK 17 ou superior
+Maven 3.8+
+PostgreSQL 14 ou superior
 
-- **src/main/java/com/ctarts**: Contém os pacotes principais do projeto.
-  - **controller**: Contém os controladores REST que manipulam as requisições HTTP, como o cadastro de alunos e o agendamento de aulas.
-  - **model**: Contém as entidades JPA, que representam as tabelas no banco de dados.
-  - **repository**: Contém as interfaces de repositórios responsáveis pela persistência de dados.
-  - **service**: Contém a lógica de negócios, com métodos que processam e retornam dados de acordo com as necessidades da aplicação.
-  - **dto**: Contém os Data Transfer Objects (DTOs), utilizados para transferir dados entre as camadas da aplicação.
+⚙️ Passos para Configuração
+Clone o repositório:
 
-### Banco de Dados
-- **PostgreSQL**: Utilizado como banco de dados de produção.
-- **H2 Database**: Usado como banco de dados em memória para facilitar o desenvolvimento local e testes rápidos.
+Bash
+git clone https://github.com/SeuUsuario/CT-MASTER.git
+cd CT-MASTER
 
-### Dependências
-- **Spring Boot Starter Web**: Para criar e expor APIs RESTful.
-- **Spring Boot Starter Data JPA**: Para a integração do Spring com o banco de dados relacional utilizando JPA.
-- **Spring Boot Starter Security**: Para implementar autenticação e controle de acesso seguro.
-- **Swagger**: Para gerar documentação interativa da API.
+Configure o Banco de Dados:
+Crie um banco de dados PostgreSQL com o nome ctarts.
 
-## Configuração do Projeto
-
-### 1. Configuração do Banco de Dados
-
-#### Criação do Banco de Dados:
-- Crie um banco de dados **PostgreSQL** com o nome `ctarts`.
-
-#### Configuração do Banco de Dados no Projeto:
-Abra o arquivo `src/main/resources/application.properties` e configure as credenciais de conexão ao banco de dados **PostgreSQL**:
-
-```properties
+Abra o arquivo src/main/resources/application.properties e ajuste as credenciais de conexão:
+Properties
 # Configurações de conexão com o banco de dados PostgreSQL
 spring.datasource.url=jdbc:postgresql://localhost:5432/ctarts
-spring.datasource.username=seu_usuario
-spring.datasource.password=sua_senha
+spring.datasource.username=seu_usuario_postgres
+spring.datasource.password=sua_senha_postgres
+
+# Hibernate irá criar/atualizar as tabelas automaticamente
 spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-spring.jpa.properties.hibernate.format_sql=true
-````
+Observação: O projeto também está configurado para usar o banco de dados em memória H2 para facilitar testes rápidos, bastando alterar o perfil do Spring para "dev" ou "test".
 
-### 2. Configuração do Swagger
--O Swagger foi integrado ao projeto para gerar a documentação interativa da API. Para acessá-la, basta rodar a aplicação e navegar até o seguinte endereço:
--http://localhost:8080/swagger-ui.html
--Isso permitirá visualizar todas as rotas da API, com exemplos de requisições e respostas.
+Execute a Aplicação:
+Pelo terminal, na raiz do projeto, execute o comando do Maven:
 
-### 3. Inicialização do Projeto
--Certifique-se de que o PostgreSQL ou H2 Database esteja funcionando corretamente.
+Bash
+./mvnw spring-boot:run
+Após a inicialização, o servidor estará disponível em http://localhost:8080.
 
-### Compile e execute o projeto com o comando:
--mvn spring-boot:run
--O servidor estará disponível em http://localhost:8080.
- 
+Acesse a Documentação da API:
+Com a aplicação em execução, acesse a documentação interativa do Swagger no seu navegador:
+http://localhost:8080/swagger-ui.html
+
+📂 Estrutura do Backend (Resumo)
+O projeto segue os princípios de uma arquitetura em camadas para garantir a separação de responsabilidades:
+
+controller: Controladores REST que manipulam as requisições HTTP.
+
+model: Entidades JPA que mapeiam as tabelas do banco de dados.
+
+repository: Interfaces que definem as operações de acesso a dados (CRUD).
+
+service: Camada que contém a lógica de negócios da aplicação.
+
+dto: Objetos de Transferência de Dados para comunicação entre as camadas.
+
+👨‍💻 Autor
+Danilo Mendes
+LinkedIn: danilomendesaraujo
+GitHub: @Danilo-tec-2003
